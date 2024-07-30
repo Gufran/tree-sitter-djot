@@ -1702,7 +1702,7 @@ bool tree_sitter_djot_external_scanner_scan(void *payload, TSLexer *lexer,
 
   Scanner *s = (Scanner *)payload;
 
-#ifdef DEBUG
+#ifdef DEBUG_LOG
   printf("SCAN\n");
   dump(s, lexer);
   dump_valid_symbols(valid_symbols);
@@ -1725,7 +1725,7 @@ bool tree_sitter_djot_external_scanner_scan(void *payload, TSLexer *lexer,
     s->block_quote_level = 0;
   }
 
-#ifdef DEBUG
+#ifdef DEBUG_LOG
   printf("Setup whitespace\n");
   printf("  block_quote_level: %u\n", s->block_quote_level);
   printf("  indent: %u\n", s->indent);
